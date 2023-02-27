@@ -1,0 +1,29 @@
+{{define "home"}}
+{{template "header"}}
+
+<a name="" id="" class="btn btn-primary" href="/create" role="button">add employee</a>
+
+
+        <table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>nombre</th>
+            <th>email</th>
+            <th>acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {{range.}}
+        <tr>
+            <td scope="row">{{.Id}}</td>
+            <td>{{.Name}}</td>
+            <td>{{.Email}}</td>
+            <td><a name="" id="" class="btn btn-danger" href="/delete?id={{.Id}}" role="button">delete</a>||<a name="" id="" class="btn btn-primary" href="/edit?id={{.Id}}" role="button">editar</a></td>
+        </tr>
+        {{end}} 
+    </tbody>
+    </table>        
+   
+{{template "footer"}}
+{{end}}

@@ -1,0 +1,30 @@
+{{define "edit"}}
+{{template "header"}}
+
+<div class="card">
+    <div class="card-header">
+        Employee
+    </div>
+    <div class="card-body">
+        <form action="/update" method="post">
+            <div class="form-group">
+                <label class="sr-only" for="inputName">key</label>
+                <input type="text" class="form-control" value={{.Id}} name="id" id="id" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="">Name</label>
+                <input type="text" class="form-control" value={{.Name}} name="name" id="name" aria-describedby="helpId" placeholder="">
+                <small id="helpId" class="form-text text-muted">Help text</small>
+            </div>
+            <div class="form-group">
+                <label for="">Email</label>
+                <input type="email" class="form-control" value={{.Email}} name="email" id="email" aria-describedby="emailHelpId" placeholder="">
+                <small id="emailHelpId" class="form-text text-muted">Help text</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Update employee</button>
+        </form>
+    </div>
+</div>
+
+{{template "footer"}}
+{{end}}
